@@ -1,4 +1,3 @@
-import enum
 import ROOT
 from typing import Any
 from PyUtils.MetaReader import read_metadata
@@ -19,7 +18,7 @@ filename = "/data/asg_test_data/mc20_13TeV.410470.PhPy8EG_A14_ttbar_hdamp258p75_
 mode = 'lite'
 
 # Make sure we know about all the containers
-if not ROOT.xAOD.Init().isSuccess():
+if not ROOT.xAOD.Init().isSuccess():  # type: ignore
     print("Failed xAOD.Init()")
 
 # Read the metadata, including some meta-meta data
